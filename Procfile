@@ -1,0 +1,1 @@
+web: gunicorn cowsay.wsgi --log-file -
