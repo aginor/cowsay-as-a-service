@@ -16,7 +16,7 @@ def build_cow():
              (__)\       )\/\\
                  ||----w |
                  ||     ||
-    """
+"""
 
 
 def build_bubble(str, length=40):

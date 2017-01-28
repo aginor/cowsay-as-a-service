@@ -25,6 +25,32 @@
                         </pre>
                     </div>
                 </div>
+                <div class="row">
+                    <h3>API</h3>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Endpoint</th>
+                            <th>Content type</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>/say/[message]</td>
+                            <td>text/html</td>
+                            <td>A pretty bootstrapified cow saying the message. The message is optional and defaults to "moo"</td>
+                        </tr>
+                        <tr>
+                            <td>/say/[message]</td>
+                            <td>text/plain</td>
+                            <td>A plaintext cow saying the message. The message is optional and defaults to "moo"</td>
+                        </tr>
+                        <tr>
+                            <td>/say/[message]</td>
+                            <td>application/json</td>
+                            <td>A JSON object containing the cow saying the message. The cow is an array of strings stored in the key "<b>message</b>".
+                                The message is optional and defaults to "moo"</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
