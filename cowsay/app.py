@@ -21,7 +21,7 @@ def index():
 @app.route('/say/<message>')
 def say(message="moo"):
     cow = cowsay(message)
-    return render_template('cow.html', message=message, cow=cow)
+    return render_template('say.html', message=message, cow=cow)
 
 
 if __name__ == '__main__':
