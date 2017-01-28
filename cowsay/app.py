@@ -1,7 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask_bootstrap import Bootstrap
-from flask_accept import accept
+from flask_accept import accept, accept_fallback
 from cowsay_py import cowsay
 
 import json
@@ -23,7 +23,7 @@ def index():
 
 @app.route('/say')
 @app.route('/say/<message>')
-@accept("text/html")
+@accept_fallback
 def say(message="moo"):
     cow = cowsay(message)
     return render_template('say.html', message=message, cow=cow)
