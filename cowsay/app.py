@@ -1,8 +1,10 @@
-from flask import Flask, jsonify
+from flask import Flask
 from flask import render_template
 from flask_bootstrap import Bootstrap
-from flask_accept import accept, accept_fallback
+from flask_accept import accept
 from cowsay_py import cowsay
+
+import json
 
 app = Flask(__name__)
 Bootstrap(app)
@@ -31,12 +33,12 @@ def say(message="moo"):
 def say_json(message="moo"):
     cow = cowsay(message)
     ret = {"message": cow.split('\n')}
-    return jsonify(ret)
+    return json.dumps(ret, ensure_ascii=False).encode('utf-8')
 
 
 @say.support("text/plain")
 def say_json(message="moo"):
-    return cowsay(message)
+    return cowsay(message).encode('utf-8')
 
 
 
