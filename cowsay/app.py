@@ -33,7 +33,7 @@ def say(message="moo"):
 def say_json(message="moo"):
     cow = cowsay(message)
     ret = {"message": cow.split('\n')}
-    return json.dumps(ret, ensure_ascii=False).encode('utf-8')
+    return json.dumps(ret, ensure_ascii=False, indent=2).encode('utf-8')
 
 
 @say.support("text/plain")
