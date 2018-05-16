@@ -18,7 +18,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = False
 @app.route('/')
 def index():
     cow = cowsay("The Premier CowSay Service")
-    return render_template('index.html', message="cowsay.cloud", cow=cow)
+    return render_template('index.html', message="cowsay.io", cow=cow)
 
 
 @app.route('/say')
