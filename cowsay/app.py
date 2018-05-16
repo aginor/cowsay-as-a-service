@@ -1,8 +1,8 @@
 from flask import Flask
 from flask import render_template
 from flask_bootstrap import Bootstrap
-from flask_accept import accept, accept_fallback
-from cowsay_py import cowsay
+from flask_accept import accept_fallback
+from cowsay.cowsay_py import cowsay
 
 import json
 

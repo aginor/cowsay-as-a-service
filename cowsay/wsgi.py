@@ -1,1 +1,1 @@
-from app import app as application
+from cowsay.app import app as application
