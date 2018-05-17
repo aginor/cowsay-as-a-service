@@ -22,7 +22,7 @@ def index():
 
 
 @app.route('/say')
-@app.route('/say/<message>')
+@app.route('/say/<path:message>')
 @accept_fallback
 def say(message="moo"):
     cow = cowsay(message)
@@ -37,7 +37,7 @@ def say_json(message="moo"):
 
 
 @say.support("text/plain")
-def say_json(message="moo"):
+def say_text(message="moo"):
     return cowsay(message).encode('utf-8')
 
 
