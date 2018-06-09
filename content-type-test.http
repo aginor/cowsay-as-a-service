@@ -1,0 +1,13 @@
+### Get request for json
+GET http://localhost:5000/say/hello
+Accept: application/json
+
+### Get request for text
+GET http://localhost:5000/say/hello
+Accept: text/plain
+
+### Get request for xml
+GET http://localhost:5000/say/hello
+Accept: application/xml
+
+###

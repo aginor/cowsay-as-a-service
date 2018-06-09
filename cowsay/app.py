@@ -13,7 +13,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-from flask import Flask
+from flask import Flask, Response
 from flask import render_template
 from flask_bootstrap import Bootstrap
 from flask_accept import accept_fallback
@@ -48,12 +48,12 @@ def say(message="moo"):
 def say_json(message="moo"):
     cow = cowsay(message)
     ret = {"message": cow.split('\n')}
-    return json.dumps(ret, ensure_ascii=False, indent=2).encode('utf-8')
+    return Response(json.dumps(ret, ensure_ascii=False, indent=2).encode('utf-8'), mimetype="application/json")
 
 
 @say.support("text/plain")
 def say_text(message="moo"):
-    return cowsay(message).encode('utf-8')
+    return Response(cowsay(message).encode('utf-8'), mimetype="text/plain")
 
 
 
